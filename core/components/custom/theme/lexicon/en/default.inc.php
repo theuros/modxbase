@@ -1,2 +1,2 @@
 ﻿<?php
-$_lang['test'] = 'TEST ENG';
+$_lang['test'] = 'Prevod ENG';

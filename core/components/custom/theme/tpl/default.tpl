@@ -2,34 +2,20 @@
 <html lang="{$_modx->config.cultureKey}">
 <head>
     {$_modx->resource.head ?: '@FILE page/head.tpl' | chunk}
-    <!-- -->
+    <!-- {$_modx->lexicon->load('theme:default')} -->
 </head>
 
 <body>
 
-
-aaaaaaaaa
-
 <div class="container">
 	{'@FILE page/header.tpl' | chunk}
-
-	DEFAULT
-
-	{
-		$_modx->resource.display ?: '@FILE chunks/content/default.tpl' | chunk
-	}
-    
-
-	{'@FILE page/footer.tpl' | chunk}
-	
-
-	<div class="border">		
-		{$_modx->lexicon->load('theme:default')}
-		{$_modx->lexicon('test')}
+	{$_modx->resource.display ?: '@FILE content/default.tpl' | chunk}
+	<div class="border my-3 p-3">
+		Lexicon: {$_modx->lexicon('test')}
 	</div>
-	
+	{'@FILE page/footer.tpl' | chunk}
 </div>
-
+{'@FILE page/scripts.tpl' | chunk}
 
 </body>
 </html>
