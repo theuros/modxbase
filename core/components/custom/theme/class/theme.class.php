@@ -21,45 +21,6 @@ class Page {
         $this->modx->addPackage('page',$this->config['modelPath']);
     }
 
-    public function getChunk($name,$properties = array()) {
-        $chunk = null;
-        
-        $folder = '';
-        if (strpos($name, '/') !== false) {
-            $tmp = explode('/',$name);
-            $name = end($tmp);
-            array_pop($tmp);
-            $folder = implode('/',$tmp).'/';
-        }
-
-        if (!isset($this->chunks[$name])) {
-            $chunk = $this->modx->getObject('modChunk',array('name' => $name));
-            if (empty($chunk) || !is_object($chunk)) {
-                $chunk = $this->_getTplChunk($folder,$name);
-                if ($chunk == false) return false;
-            }
-            $this->chunks[$name] = $chunk->getContent();
-        } else {
-            $o = $this->chunks[$name];
-            $chunk = $this->modx->newObject('modChunk');
-            $chunk->setContent($o);
-        }
-        $chunk->setCacheable(false);
-        return $chunk->process($properties);
-    }
-    
-    private function _getTplChunk($folder,$name,$postfix = '.chunk.tpl') {
-        $chunk = false;
-        $f = $this->config['chunksPath'].$folder.strtolower($name).$postfix;
-        if (file_exists($f)) {
-            $o = file_get_contents($f);
-            $chunk = $this->modx->newObject('modChunk');
-            $chunk->set('name',$name);
-            $chunk->setContent($o);
-        }
-        return $chunk;
-    }
-
     public function hello(){
         return 'Howdy world page class !';
     }

@@ -1,10 +1,14 @@
 <?php
-
-$util = $modx->getService('utility','Utility',$modx->getOption('core_path').'components/tend/page/',$scriptProperties);
+/*****************************************************/
+/*****************************************************/
+/**** !!!! NEVER EDIT THIS FILE INSIDE MODX !!!! ****/
+/*****************************************************/
+/*****************************************************/
+$util = $modx->getService('utility','Utility',$modx->getOption('core_path').'components/custom/theme/class/',$scriptProperties);
 if (!($util instanceof Utility)) return 'ERROR';
 
-$eventName = $modx->event->name;
-switch($eventName) {
+
+switch($modx->event->name) {
     
     case 'OnBeforeDocFormSave':
         $resource->set('alias', $util->clearAlias($resource->get('alias'))); // remove ščćž from string
@@ -16,6 +20,10 @@ switch($eventName) {
 
     case 'OnPageNotFound':
         // $util->fixHomeRedirect(); // ne dela, vrže 500 error če prideš na vsebino katera nima permissionov
+    break;
+
+    case 'OnBeforeManagerLogin':
+        
     break;
 
 }
