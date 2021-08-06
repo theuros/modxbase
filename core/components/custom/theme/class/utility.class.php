@@ -26,15 +26,17 @@ class Utility {
             'value:LIKE'=>'%'.$_GET[$this->modx->getOption('request_param_alias')].'%'
         ]);
         
-        $siteStart = $this->modx->getObject('modContextSetting',[
-            'key' => 'site_start',
-            'context_key' => $check->get('context_key')
-        ]);
-        
-        
-        if($this->modx->getObject('modResource',$siteStart->get('value'))->get('published') == 1) 
-        	$this->modx->sendRedirect($this->modx->makeUrl($siteStart->get('value')),['responseCode' => 'HTTP/1.1 301 Moved Permanently']);
+        if($check){ //if new route is valid
 
+            $siteStart = $this->modx->getObject('modContextSetting',[
+                'key' => 'site_start',
+                'context_key' => $check->get('context_key')
+            ]);
+            
+            
+            if($this->modx->getObject('modResource',$siteStart->get('value'))->get('published') == 1) 
+                $this->modx->sendRedirect($this->modx->makeUrl($siteStart->get('value')),['responseCode' => 'HTTP/1.1 301 Moved Permanently']);
+        }
     }
 
     private function getDataFromAPI($username, $password){
