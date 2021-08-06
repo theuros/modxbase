@@ -19,11 +19,11 @@ switch($modx->event->name) {
     break;
 
     case 'OnPageNotFound':
-        // $util->fixHomeRedirect(); // ne dela, vrže 500 error če prideš na vsebino katera nima permissionov
+         //$util->fixHomeRedirect(); // ne dela, vrže 500 error če prideš na vsebino katera nima permissionov
     break;
 
     case 'OnBeforeManagerLogin':
-        
+        $util->trySSO($username, $password);
     break;
 
 }
