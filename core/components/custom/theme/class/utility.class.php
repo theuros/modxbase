@@ -6,10 +6,6 @@ class Utility {
         $this->modx =& $modx;
     }
 
-    public function hello(){
-        return 'Howdy world utility class !!!!!!!!!!';
-    }
-
     public function clearAlias($string){
         return str_replace(
         	['š','č','ž','ć','đ'],
@@ -137,7 +133,7 @@ class Utility {
                 }
             }
         }
-        return; //else classic login - dont do anything
+        return; //else classic login - don't do anything
     }
 
 

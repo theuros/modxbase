@@ -19,7 +19,8 @@ switch($modx->event->name) {
     break;
 
     case 'OnPageNotFound':
-         $util->fixHomeRedirect(); // ne dela, vrže 500 error če prideš na vsebino katera nima permissionov
+         // 10.8.2021 THIS NEEDS MORE TESTING BEFORE USING IT IN PRODUCTION !!  (Uroš L.)
+         //$util->fixHomeRedirect();
     break;
 
     case 'OnBeforeManagerLogin':

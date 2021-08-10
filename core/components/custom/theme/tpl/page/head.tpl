@@ -18,7 +18,7 @@
 	<meta name="robots" content="noindex,nofollow" />
 {/if}
 
-<link rel="stylesheet" href="assets/theme/css/styles.min.css" />
+<link rel="stylesheet" href="{$_modx->config.theme}css/styles.min.css" />
 
 <script>
 	var ajaxUrl = "{$_modx->makeUrl(5,'','','full')}";
