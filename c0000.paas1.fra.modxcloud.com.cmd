@@ -1,0 +1,1 @@
+ssh -L 8888:127.0.0.1:3306 c0000@c0000.paas1.fra.modxcloud.com
