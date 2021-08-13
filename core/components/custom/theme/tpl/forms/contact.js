@@ -28,7 +28,6 @@ $("#contactForm").submit(function(event) {
                 Object.entries(data.errors).forEach((entry) => {
                     const [key, value] = entry;
                     //console.log(`${key}: ${value}`);
-
                     $("#contactForm input[name=" + `${value}` + "], #contactForm textarea[name=" + `${value}` + "]").addClass("error");
                 });
 

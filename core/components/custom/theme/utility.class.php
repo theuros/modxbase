@@ -1,5 +1,4 @@
 <?php
-
 class Utility {
 
     public function __construct(modX &$modx,array $config = array()) {

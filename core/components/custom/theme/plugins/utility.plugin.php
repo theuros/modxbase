@@ -4,7 +4,7 @@
 /**** !!!! NEVER EDIT THIS FILE INSIDE MODX !!!! ****/
 /*****************************************************/
 /*****************************************************/
-$util = $modx->getService('utility','Utility',$modx->getOption('core_path').'components/custom/theme/class/',$scriptProperties);
+$util = $modx->getService('utility','Utility',$modx->getOption('core_path').'components/custom/theme/',$scriptProperties);
 if (!($util instanceof Utility)) return 'ERROR';
 
 
