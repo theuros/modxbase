@@ -6,4 +6,3 @@ foreach(explode(',',$input) as $v){
 }
 
 return $o;
-return "JSON: ".json_encode($o);

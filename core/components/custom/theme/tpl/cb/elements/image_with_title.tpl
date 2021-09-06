@@ -11,40 +11,7 @@
 		{var $w = 800}
 {/switch}
 
-{switch $ratio}
-	{case '1:1'}
-		{var $h = $w}
-		{var $ptOptions = 'w='~$w~'&h='~$h}
-	{case '4:3'}
-		{var $h = (3 * $w) / 4}
-		{set $h = '@FILE helpers/round.php' | snippet : ['input' => $h]}
-		{var $ptOptions = 'w='~$w~'&h='~$h}
-	{case '16:9'}
-		{var $h = (9 * $w) / 16}
-		{set $h = '@FILE helpers/round.php' | snippet : ['input' => $h]}
-		{var $ptOptions = 'w='~$w~'&h='~$h}
-	{case '21:9'}
-		{var $h = (9 * $w) / 21}
-		{set $h = '@FILE helpers/round.php' | snippet : ['input' => $h]}
-		{var $ptOptions = 'w='~$w~'&h='~$h}
-	{case '9:21'}
-		{var $h = (21 * $w) / 9}
-		{set $h = '@FILE helpers/round.php' | snippet : ['input' => $h]}
-		{var $ptOptions = 'w='~$w~'&h='~$h}
-	{case '9:16'}
-		{var $h = (16 * $w) / 9}
-		{set $h = '@FILE helpers/round.php' | snippet : ['input' => $h]}
-		{var $ptOptions = 'w='~$w~'&h='~$h}
-	{case '3:4'}
-		{var $h = (4 * $w) / 3}
-		{set $h = '@FILE helpers/round.php' | snippet : ['input' => $h]}
-		{var $ptOptions = 'w='~$w~'&h='~$h}
-	{default}
-		{var $h = ($height * $w) / $width}
-		{set $h = '@FILE helpers/round.php' | snippet : ['input' => $h]}
-		{var $ptOptions = 'w='~$w}
-{/switch}
-
+{var $ptOptions = '@FILE cb/options/pthumb_size_options.php' | snippet : ['ratio' => $ratio, 'width' => $w]}
 
 {var $opt = '@FILE cb/options/options_check.php' | snippet : ['input' => $options]}
 
