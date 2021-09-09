@@ -1,6 +1,8 @@
+/*
 var contactFormModal = new bootstrap.Modal(document.getElementById('contactFormModal'), {
     keyboard: false
 });
+*/
 
 $("#contactForm").submit(function(event) {
     event.preventDefault();

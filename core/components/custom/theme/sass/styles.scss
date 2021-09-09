@@ -10,3 +10,7 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+/* VENDOR styles - START ************************/
+@import "vendor/colorbox";
+/* VENDOR styles - END **************************/
