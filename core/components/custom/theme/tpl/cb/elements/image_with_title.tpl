@@ -11,9 +11,9 @@
 		{var $w = 800}
 {/switch}
 
-{var $ptOptions = '@FILE cb/options/pthumb_size_options.php' | snippet : ['ratio' => $ratio, 'width' => $w]}
+{var $ptOptions = '@FILE cb/helpers/pthumb_size_options.php' | snippet : ['ratio' => $ratio, 'width' => $w]}
 
-{var $opt = '@FILE cb/options/options_check.php' | snippet : ['input' => $options]}
+{var $opt = '@FILE cb/helpers/options_check.php' | snippet : ['input' => $options]}
 
 {if $opt.nocrop} 
 	{set $ptOptions = $ptOptions~'&far=1&bg=#e6e6e7'}

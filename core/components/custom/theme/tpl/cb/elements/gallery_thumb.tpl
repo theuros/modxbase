@@ -25,7 +25,7 @@
 {set $w = $w / $columns}
 {set $w = '@FILE helpers/round.php' | snippet : ['input' => $w]}
 
-{var $ptOptions = '@FILE cb/options/pthumb_size_options.php' | snippet : ['ratio' => $ratio, 'width' => $w, 'zc' => 1]}
+{var $ptOptions = '@FILE cb/helpers/pthumb_size_options.php' | snippet : ['ratio' => $ratio, 'width' => $w, 'zc' => 1]}
 
 <li class="{$class} mb-4">
 	<a href="{'pthumb' | snippet : ['input' => $url, 'options' => 'w=1024']}">
